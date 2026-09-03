@@ -1,0 +1,6 @@
+fastmcp
+chromadb
+#sentence-transformers
+optimum[onnxruntime]
+scikit-learn
+transformers
