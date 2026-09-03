@@ -75,7 +75,7 @@
 <pre><code>#log 주소 수정
  logging.basicConfig(
     filename="[파일 경로]/mcp_server.log",
-    level=logging.INFO
+    level=logging.DEBUG #레벨 설정
  )
 # chroma db 주소 수정_ 기존 데이터 없이 새로 시작하고 싶다면 db 이름이나 collection 이름 수정하여 새로 생성
  client = chromadb.PersistentClient(path='[파일 경로]/novel_rag.db')
@@ -84,7 +84,7 @@
 * cohere api 키 생성 후 .env 파일에 저장하기
 <pre><code>COHERE_API_KEY = YOUR_API_KEY</code></pre>
 #### mcp 연결
-* claude desktop 앱의 설정-개발자-구성편집 클릭 후 claude_desktop_config.json 파일 수정
+* claude desktop 앱의 설정-개발자-구성편집 클릭 후 claude_desktop_config.json 파일에 mcp 서버 추가
 <pre></code>
 "mcpServers": {
   "[서버 이름]" : {
@@ -102,7 +102,6 @@
  * read 기능의 현재 설정 위치는 '/mnt/c' (c드라이브)이다. 클로드에게 경로를 알려줄 때 c드라이브 제외 전체 위치를 입력하거나 서버에 설정된 위치를 샹황에 맞게 수정해서 사용하면 된다.
 #### log 확인 방법
 <pre><code>tail -f [파일 경로]/mcp_server.log</code></pre>
-* 현재 logging 레벨은 INFO로 되어 있으니 파이썬 코드에서 직접 logging.DEBUG로 추가한 내용들을 보려면 레벨을 DEBUG로 수정해야 한다.
 
 ## 4. 폴더 구조
 ### colab_prototype
